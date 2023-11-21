@@ -18,6 +18,8 @@ def service():
             print(data) #Здесь вызываете свой парсер. Для примера функция: parser (parse)
             if float(data[4]) > 268.23:
                 sock.sendto('I want to buy this ticket'.encode(), client)
+            else:
+                sock.sendto('Nothing'.encode(), client) # отправка сообщения если ничего делать клиенту не нужно
     sock.close()
 
 #Запускаем сервер в своем потоке
